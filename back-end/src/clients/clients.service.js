@@ -1,29 +1,29 @@
 const knex = require("../db/connection")
 
 function list(){
-    return knex("projects")
+    return knex("clients")
     .select("*")
 }
 
-function read(project_id){
-    return knex("projects")
+function read(client_id){
+    return knex("clients")
     .select("*")
-    .where({project_id})
+    .where({client_id})
     .first();
 }
 
-function create(project){
-    return knex("projects")
-    .insert(project, "*")
-    .then(createdProject => createdProject[0])
+function create(client){
+    return knex("clients")
+    .insert(client, "*")
+    .then(createdClient => createdClient[0])
 }
 
-function update(project){
-    return knex("projects")
+function update(client){
+    return knex("clients")
     .select("*")
-    .where({project_id: project.project_id})
-    .update(project, "*")
-    .then(updatedProject => updatedProject[0])
+    .where({client_id: client.client_id})
+    .update(client, "*")
+    .then(updatedClient => updatedClient[0])
 }
 
 module.exports = {
