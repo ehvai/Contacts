@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+h1{
+  text-align: center;
+}
+
+body{
+  background-image: url("./images/grey-wavey.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}

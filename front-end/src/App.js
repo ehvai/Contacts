@@ -4,7 +4,7 @@ import Dashboard from "./Layout/Dashboard";
 import NotFound from "./Layout/NotFound";
 import Layout from "./Layout/Layout";
 import Menu from "./Layout/Menu";
-import Clients from "./Layout/Clients";
+import Clients from "./Clients/Clients";
 import Vendors from "./Layout/Vendors";
 
 function App() {
