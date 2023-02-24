@@ -1,4 +1,4 @@
-const service = require("../clients/clients.service");
+const service = require("../client/client.service");
 
 async function clientIDExists(req, res, next) {
   const client = await service.read(req.params.client_id);

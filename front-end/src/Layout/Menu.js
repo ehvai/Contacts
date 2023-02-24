@@ -1,39 +1,81 @@
 import { Outlet } from "react-router-dom";
-import "../App.js"
+import ClientMenu from "../Client/ClientMenu";
+import VendorMenu from "../Vendor/VendorMenu";
+import "../App.js";
 
 function Menu() {
   return (
     <>
-    <h1 className="menu">Contacts</h1>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div className="container-fluid">
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link" href={"/dashboard"}>Dashboard</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href={"/clients"}>Clients</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href={"/vendors"}>Vendors</a>
-              </li>
-            </ul>
-          </div>
-          <form className="d-flex" role="search">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button className="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
+      <h1 className="menu">Contact List</h1>
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <button
+            class="nav-link active"
+            id="nav-dashboard-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#nav-dashboard"
+            type="button"
+            role="tab"
+            aria-controls="nav-dashboard"
+            aria-selected="true"
+          >
+            Dashboard
+          </button>
+          <button
+            class="nav-link"
+            id="nav-client-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#nav-client"
+            type="button"
+            role="tab"
+            aria-controls="nav-client"
+            aria-selected="false"
+          >
+            Client
+          </button>
+          <button
+            class="nav-link"
+            id="nav-vendor-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#nav-vendor"
+            type="button"
+            role="tab"
+            aria-controls="nav-vendor"
+            aria-selected="false"
+          >
+            Vendor
+          </button>
         </div>
       </nav>
-      <Outlet />
+      <div class="tab-content" id="nav-tabContent">
+        <div
+          class="tab-pane fade show active"
+          id="nav-dashboard"
+          role="tabpanel"
+          aria-labelledby="nav-dashboard-tab"
+          tabindex="0"
+        >
+          <Outlet />
+        </div>
+        <div
+          class="tab-pane fade"
+          id="nav-client"
+          role="tabpanel"
+          aria-labelledby="nav-client-tab"
+          tabindex="0"
+        >
+          <ClientMenu />
+        </div>
+        <div
+          class="tab-pane fade"
+          id="nav-vendor"
+          role="tabpanel"
+          aria-labelledby="nav-vendor-tab"
+          tabindex="0"
+        >
+          <VendorMenu />
+        </div>
+      </div>
     </>
   );
 }

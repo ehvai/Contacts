@@ -7,6 +7,7 @@ exports.up = function (knex) {
     table.increments("address_id").primary();
     table.string("address_street");
     table.string("address_city");
+    table.string("address_state");
     table.string("address_zipcode");
     table.string("address_gate_code");
     table.timestamps(true, true);
