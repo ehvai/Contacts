@@ -1,22 +1,24 @@
 const path = require("path");
-require("dotenv").config({ path: path.join(__dirname, ".." , ".env") });
+require("dotenv").config({ path: path.join(__dirname, "..", ".env") });
 const express = require("express");
 const cors = require("cors");
 
 const errorHandler = require("./errors/errorHandler");
 const notFound = require("./errors/notFound");
-const clientsRouter = require("./clients/clients.router");
+const clientsRouter = require("./client/client.router");
 const companyRouter = require("./company/company.router");
-const vendorRouter = require("./vendors/vendors.router")
+const contactRouter = require("./contact/contact.router");
+const personRouter = require("./person/person.router");
 
-const app=express();
+const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-app.use("/clients", clientsRouter);
+app.use("/client", clientsRouter);
 app.use("/company", companyRouter);
-app.use("/vendor", vendorRouter);
+app.use("/contact", contactRouter);
+app.use("/person", personRouter);
 
 app.use(notFound);
 app.use(errorHandler);
